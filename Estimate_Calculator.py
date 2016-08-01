@@ -15,10 +15,10 @@ the decimal module would likely be used.
 '''
 
 # two global numbers used for final estimation calculation
-laborFinal = 0
-materialFinal = 0
+labor_final = 0
+material_final = 0
 
-def material_Estimate():
+def estimate_material():
 
     # getting dimensions of the job site
     # variability in dimensions will be reflected in pricePerSquareFoot per owner's request
@@ -32,45 +32,45 @@ def material_Estimate():
 
     # getting price per square foot of job (will fluctuate based on difficulty of job
     print("What is the price per square foot? [3.50 - 6.00 dollars]")
-    pricePerSquareFoot = int(input())
+    price_per_square_foot = int(input())
 
-    materialEstimate = area * pricePerSquareFoot
+    material_estimate = area * price_per_square_foot
 
-    print("Your material estimate is %d" % materialEstimate)
+    print("Your material estimate is %d" % material_estimate)
 
     # for material and labor estimate
-    global materialFinal
-    materialFinal = materialEstimate
+    global material_final
+    material_final = material_estimate
 
     return
 
-def labor_Estimate():
+def labor_estimate():
 
     # getting workers per day, hours per day worked, and total days
     print("How many workers will you have per day?")
     workers = int(input())
 
     print("How many hours per day do you expect them to work")
-    hoursWorked = int(input())
+    hours_worked = int(input())
 
     print("What is the labor rate per day? [dollars per hour]")
-    laborRate = int(input())
+    labor_rate = int(input())
 
-    laborEstimate = workers * hoursWorked * laborRate
+    labor_estimate = workers * hours_worked * labor_rate
 
-    print("The estimate for these parameters is %d" % laborEstimate)
+    print("The estimate for these parameters is %d" % labor_estimate)
 
     # global variable used with material estimate for total estimate
-    global laborFinal
-    laborFinal = laborEstimate
+    global labor_final
+    labor_final = labor_estimate
 
     return
 
-def total_Estimate():
+def estimate_total():
 
-    totalEstimate = materialFinal + laborFinal
+    total_estimate = material_final + labor_final
 
-    print("The total estimate is %d dollars" % totalEstimate)
+    print("The total estimate is %d dollars" % total_estimate)
 
     return
 
@@ -79,15 +79,15 @@ def main():
 
     # main method used for calculations
 
-    material_Estimate()
+    estimate_material()
 
 
     print("Would you like to estimate labor? [y/n]")
-    continueForLabor = input()
+    continue_for_labor = input()
 
-    if continueForLabor is "y":
+    if continue_for_labor is "y":
 
-        labor_Estimate()
+        estimate_labor()
 
     '''
     Asked to continue after labor estimate because owner Dom says labor costs may sometimes be
@@ -97,11 +97,11 @@ def main():
     '''
 
     print("Would you like to see your total estimate in dollars [y/n]")
-    continueForTotal = input()
+    continue_for_total = input()
 
-    if continueForTotal is "y":
+    if continue_for_total is "y":
 
-        total_Estimate()
+        estimate_total()
 
     return
 
