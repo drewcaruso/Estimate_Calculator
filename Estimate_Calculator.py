@@ -44,7 +44,7 @@ def estimate_material():
 
     return
 
-def labor_estimate():
+def estimate_labor():
 
     # getting workers per day, hours per day worked, and total days
     print("How many workers will you have per day?")
