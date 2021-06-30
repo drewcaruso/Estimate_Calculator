@@ -12,6 +12,9 @@ which is why on the programming side simple ints in this program will suffice. A
 once the job is done, with any unseen issues resolved into the final price. If there was a call for more precision,
 the decimal module would likely be used.
 
+AMINO ACID sequence is raw sequence, future direction to search against proteome database
+nucleotides?
+
 '''
 
 # two global numbers used for final estimation calculation
